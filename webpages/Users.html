@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<title>Account</title>
+	<link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="../localScripts/Users.js" defer></script>
+</head>
+
+<body>
+    <h2>Edit Your Profile</h2>
+    <div class="profile-container">
+        <image src="../svg/profile.svg" alt="Account" id="account-svg" width="160" height="160">
+        <div id="profileName">
+            <strong>Profile name:</strong>
+        </div>
+        <div id="profileEmail">
+            <strong>Email:</strong> 
+        </div>
+        <div id="profilePhone">
+            <strong>Phone:</strong>
+        </div>
+        <button class="button" id="editProfileBtn" onclick="enableEditing()">Edit Profile</button>
+        <button id="saveProfileBtn" class="save-button" onclick="saveChanges()">Save</button>
+    </div>    
+</body>
+
+<footer>
+    <div class = "footer" >
+        <nav>
+            <div class="footer-container">
+                <image src="../svg/home.svg" alt="Home" width="30" height="30">
+                <a href="../MainPage.html">Home</a>
+            </div>
+            <div class="footer-container">
+                <image src="../svg/stats.svg" alt="Stats" width="30" height="30"></image>
+                <a href="./Stats.html">Stats</a>
+            </div>
+        </nav>
+    </div>
+</footer>
+</html>    

@@ -1,0 +1,513 @@
+/*CSS StyleSheet for all contents*/
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    text-align:  center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+body{
+    background: #bc83d321;
+}
+
+h3{
+    text-align:  center;
+    padding-bottom: 10px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+    margin-top: -100px;
+    padding-top: 50px;
+    min-height: 700px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.wrapper{
+    position: absolute;
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* CSS for Calendar section */
+header .icons{
+    display: flex;
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+}
+
+.icons span:last-child{
+    margin-right: -10px;
+}
+
+header .icons span:hover{
+    background: #f2f2f2;
+}
+
+header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.calendar{
+    padding: 20px;
+}
+
+.calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+
+.calendar .days{
+    margin-bottom: 20px;
+}
+
+.calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+}
+
+.calendar .weeks li{
+    font-weight: 500;
+    cursor: default;
+}
+
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+}
+
+.days li.inactive{
+    color: #aaa;
+}
+
+.days li.active{
+    color: #fff;
+}
+
+.days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li.active::before{
+    background: #9B59B6;
+}
+
+.days li:not(.active):hover::before{
+    background: #f2f2f2;
+}
+
+/* CSS to move To-Do List section to the right side */
+.todo-list {
+    float: right;
+    margin-right: 20px; 
+    text-align: right;
+}
+
+/* CSS for Goals section */
+.goals-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 200px;
+    position: relative;
+    bottom: 30px;
+}
+
+.goals-section {
+    flex: 1;
+    max-width: 470px;
+}
+
+.goals-display {
+    flex: 1;
+    position: absolute;
+    left: 740px;
+}
+
+
+#goalsList {
+    overflow-x: auto;
+    word-wrap: break-word;
+    padding-left: 0; /* Reset default padding */
+    list-style: none; /* Remove default list style */
+}
+
+#goalsList li {
+    padding-left: 20px; /* Add padding to align with custom bullet points */
+    position: relative; /* Create a positioning context for pseudo-element */
+}
+
+#goalsList li::before {
+    content: "•"; /* Use the bullet character as content */
+    color: #000; /* Set the color of the bullet points */
+    font-size: 16px; /* Adjust size of the bullet points */
+    position: absolute; /* Position the bullet points relative to the list item */
+    left: 0; /* Align the bullet points with the left edge of the list item */
+    top: 0; /* Align the bullet points with the top edge of the list item */
+}
+
+
+
+.goals-title {
+    padding: 0px;
+    text-align: left;
+}
+
+.goal-circle {
+    width: 22px; /* Adjust circle size */
+    height: 22px; /* Adjust circle size */
+    border: 2px solid #bc83d3;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px; /* Adjust circle margin */
+    vertical-align: middle;
+}
+
+#goalInput {
+    width: calc(100% - 22px - 5px - 10px);
+}
+
+#my-goal {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+span {
+    content: "\2192";
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* CSS for the tasks section */
+.tasks {
+    float : right;
+    margin-right: -350px;
+    margin-top: -20px;
+}
+
+.tasks h2 {
+    text-align:left;
+    margin-right: -110px;
+    margin-bottom: -25px;
+}
+
+#completedTaskList {
+    float: right; /* Float the task list to the right */
+    margin-top: 10px; /* Optional: Add margin to separate from the title */
+    margin-left: 10px;
+    width: 120px; /* Optional: Set a width to the task list */
+    list-style: none; /* Remove default list styles */
+}
+
+#dueTaskList {
+    float: right; /* Float the task list to the right */
+    margin-top: 10px; /* Optional: Add margin to separate from the title */
+    margin-left: 10px;
+    width: 120px; /* Optional: Set a width to the task list */
+    list-style: none; /* Remove default list styles */
+}
+
+li{
+    width: 400px;
+    margin-bottom: 5px;
+}
+
+.priority-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #380e48;
+}
+
+.priority{
+    padding-right: 30px;
+}
+
+.completedCheckbox {
+    margin-right: 10px;
+    width: 14px;
+    height: 14px;
+}
+
+.taskDescription {
+    display: none;
+}
+
+.taskName{
+    cursor: pointer;
+    font-size: 16px;
+}
+.taskName:hover ~ .taskDescription {
+    display: block;
+    color: #bc83d3;
+    font-size: 16px;
+}
+
+.completed-task .taskName {
+    text-decoration: line-through;
+    color: #999; 
+}
+
+
+/* CSS for the footer section */
+.footer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.footer-container a {
+    margin-left: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: #bc83d3;
+}
+
+/* CSS for the User Page Profile section */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+#profileName{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#profileEmail, #profilePhone {
+    padding-bottom: 10px;
+}
+
+#profileNameInput, #profileEmailInput, #profilePhoneInput {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    margin-top: 20px;
+    width: 120px;
+    padding: 10px 20px;
+    background-color: #bc83d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-button {
+    display: none;
+    width: 120px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #bc83d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button {
+    width: 120px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #bc83d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CSS for Modal Section */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+hr{
+    margin-bottom: 30px;
+}
+
+.modal-content {
+    background-color: white;
+    width: 50%;
+    padding: 20px;
+    margin: 100px auto;
+    position: relative;
+    border-radius: 5px;
+}
+
+.option {
+    padding-top: 30px;
+}
+
+.modalButtons{
+    text-align:  center;
+    padding-top: 20px;
+}
+
+.radio {
+    background-color: #bc83d3;
+    display: none;
+}
+
+.radio + label:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.radio:checked + label:before {
+    /* Change background color when radio button is checked */
+    background-color: #bc83d3;
+}
+
+
+/* CSS for the Stats page section */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.statistics {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.statistic {
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+    border: 2.5px solid #bc83d3;
+    border-radius: 5px;
+    margin: 0 10px;
+    width: 60%;
+    margin:auto;
+}
+
+.statistic h2 {
+    margin-top: 0;
+}
+
+.statistic p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.graph-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    display:block
+}
+
+#taskGraph {
+    max-width: 100%;
+    height: auto;
+}
+
+.AllTasks {
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 750;
+    display:block;
+  }
+  .AllTasks ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+  .AllTasks li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }

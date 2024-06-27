@@ -1,0 +1,11 @@
+#git ignore file
+*.class
+bin/
+*.DS_store
+*__pycache__
+*.pdf
+!SDD.pdf
+*.log
+*node_modules/
+*package-lock.json
+*package.json
